@@ -1,0 +1,16 @@
+{
+    "name": "Lando.Core.Editor",
+    "rootNamespace": "",
+    "references": ["GUID:5106ef03c074f46f3989d88b40530470"],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

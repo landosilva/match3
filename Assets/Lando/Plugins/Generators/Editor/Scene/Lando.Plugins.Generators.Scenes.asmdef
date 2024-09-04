@@ -1,0 +1,20 @@
+{
+    "name": "Lando.Plugins.Generators.Scenes",
+    "rootNamespace": "",
+    "references": [
+        "GUID:5106ef03c074f46f3989d88b40530470",
+        "GUID:61e404f2ac15d4bfd95207476d125c8f",
+        "GUID:2c2f2d95b2f324df6848d3de9cc7ed2f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

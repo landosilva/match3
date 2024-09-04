@@ -1,0 +1,4 @@
+{
+	"name": "Lando.Plugins.Sound",
+	"references":[ "GUID:400eb0fb2dbce409ba105d080a1c11c0", "GUID:5106ef03c074f46f3989d88b40530470" ]
+}
