@@ -1,5 +1,5 @@
-using DG.Tweening;
 using Match3.Data;
+using PrimeTween;
 using UnityEngine;
 
 namespace Match3.Entities
@@ -15,14 +15,13 @@ namespace Match3.Entities
         private void OnEnable()
         {
             transform.localScale = Vector3.zero;
-            transform.DOScale(Vector3.one, duration: 0.3f)
-                .SetEase(Ease.OutBack)
-                .SetDelay(delay: Random.Range(0f, 0.1f));
-        }
-
-        private void OnDisable()
-        {
-            transform.DOKill();
+            TweenSettings settings = new()
+            {
+                duration = 0.3f,
+                ease = Ease.OutBack,
+                startDelay = Random.Range(0f, 0.15f)
+            };
+            Tween.Scale(transform, Vector3.one, settings);
         }
 
         public void SetData(FruitData data)
