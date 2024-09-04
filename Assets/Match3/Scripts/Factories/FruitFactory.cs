@@ -1,4 +1,3 @@
-using Lando.Core.Extensions;
 using Lando.Plugins.Data;
 using Lando.Plugins.Singletons.MonoBehaviour;
 using Match3.Data;
@@ -10,12 +9,6 @@ namespace Match3.Factories
     public class FruitFactory : Singleton<FruitFactory>
     {
         [SerializeField] private Fruit _fruitPrefab;
-
-        public static Fruit CreateRandom()
-        {
-            string identifier = FruitIdentifier.Collection.PickRandom();
-            return Create(identifier);
-        }
 
         public static Fruit Create(string identifier)
         {

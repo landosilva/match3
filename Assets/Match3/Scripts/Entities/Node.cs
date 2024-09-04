@@ -5,12 +5,11 @@ namespace Match3.Entities
 {
     public class Node : MonoBehaviour
     {
-        private Fruit _fruit;
-        
         private readonly Dictionary<Vector2Int, Node> _neighbours = new();
         
         public Vector2Int Index { get; set; }
-        
+        public Fruit Fruit { get; private set; }
+
         public void Initialize(Vector2Int index)
         {
             Index = index;
@@ -29,20 +28,24 @@ namespace Match3.Entities
             }
         }
         
+        public Node GetNeighbour(Vector2Int direction) => _neighbours.GetValueOrDefault(direction);
+        public bool TryGetNeighbour(Vector2Int direction, out Node neighbour) 
+            => _neighbours.TryGetValue(direction, out neighbour);
+
         public void Place(Fruit fruit)
         {
-            _fruit = fruit;
+            Fruit = fruit;
             fruit.transform.position = transform.position;
             fruit.gameObject.SetActive(gameObject.activeInHierarchy);
         }
 
         public void Clear()
         {
-            if (_fruit == null) 
+            if (Fruit == null) 
                 return;
             
-            Destroy(_fruit.gameObject);
-            _fruit = null;
+            Destroy(Fruit.gameObject);
+            Fruit = null;
         }
     }
     
@@ -50,8 +53,8 @@ namespace Match3.Entities
     {
         public static readonly Vector2Int Up = new(0, 1);
         public static Vector2Int Down => new(0, -1);
-        private static Vector2Int Left => new(-1, 0);
-        private static Vector2Int Right => new(1, 0);
+        public static Vector2Int Left => new(-1, 0);
+        public static Vector2Int Right => new(1, 0);
             
         public static List<Vector2Int> All => new()
         {
